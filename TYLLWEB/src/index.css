@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #005da7;
+  --color-primary-container: #68abff;
+  --color-primary-fixed: #68abff;
+  --color-on-primary: #eef3ff;
+  --color-on-primary-container: #002b52;
+  --color-secondary: #6d5a00;
+  --color-secondary-container: #fad538;
+  --color-on-secondary-container: #5a4a00;
+  --color-tertiary: #006a27;
+  --color-tertiary-container: #99fba1;
+  --color-on-tertiary-container: #006123;
+  --color-error: #b31b25;
+  --color-error-container: #fb5151;
+  --color-error-dim: #9f0519;
+  --color-surface: #f5f7f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eef1f3;
+  --color-surface-container: #e5e9eb;
+  --color-surface-container-high: #dfe3e6;
+  --color-surface-container-highest: #d9dde0;
+  --color-on-surface: #2c2f31;
+  --color-on-surface-variant: #595c5e;
+  --color-outline: #747779;
+  --color-outline-variant: #abadaf;
+
+  --color-brand-blue: #00aeef;
+  --color-macaron-yellow: #fff9db;
+  --color-macaron-blue: #e7f5ff;
+  --color-macaron-pink: #fff0f6;
+  --color-macaron-green: #ebfbee;
+
+  --font-headline: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
+  --font-body: "Be Vietnam Pro", "Noto Sans SC", sans-serif;
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  .bg-login-pattern {
+    background-image: radial-gradient(circle at 20% 30%, #eef3ff 0%, transparent 40%),
+                      radial-gradient(circle at 80% 70%, #fff2ce 0%, transparent 40%),
+                      radial-gradient(circle at 50% 50%, #cfffcd 0%, transparent 50%);
+  }
+
+  .bouncy-hover:hover {
+    transform: scale(1.05) translateY(-4px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@keyframes breathe-primary {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 174, 239, 0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 174, 239, 0.4); }
+}
+
+.animate-breathe-large {
+  animation: breathe-primary 4s ease-in-out infinite;
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
+
+@keyframes flash-red {
+  0%, 100% { background-color: #f8d7da; color: #721c24; }
+  50% { background-color: #f5c6cb; color: #721c24; }
+}
+
+.alarm-active {
+  animation: flash-red 1s infinite;
+}
+
+@keyframes mic-pulse-anim {
+  to { box-shadow: 0 0 0 25px rgba(104, 171, 255, 0); }
+}
+
+.mic-pulse {
+  box-shadow: 0 0 0 0 rgba(104, 171, 255, 0.7);
+  animation: mic-pulse-anim 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes smoke-flash-anim {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; background-color: #fb5151; }
+}
+
+.smoke-flash {
+  animation: smoke-flash-anim 1.5s infinite;
+}
